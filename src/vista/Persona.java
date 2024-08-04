@@ -11,22 +11,42 @@ package vista;
 abstract class Persona {
     
     
-    private String nombres,apellidos,direccion, telefono, fecha_nacimiento;
+    private String nombres,apellidos,direccion, telefono, fecha_nacimiento, sueldo, bonificacion;
 
     // constructor de persona
 
-    public Persona(String nombres, String apellidos, String direccion, String telefono, String fecha_nacimiento) {
-        
+    public Persona(String nombres, String apellidos, String direccion, String telefono, String fecha_nacimiento, String sueldo, String bonificacion) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.direccion = direccion;
         this.telefono = telefono;
         this.fecha_nacimiento = fecha_nacimiento;
+        this.sueldo = sueldo;
+        this.bonificacion = bonificacion;
     }
+
+    
    
     
     public Persona(){}
 
+    public String getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(String sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public String getBonificacion() {
+        return bonificacion;
+    }
+
+    public void setBonificacion(String bonificacion) {
+        this.bonificacion = bonificacion;
+    }
+
+    
     
     public String getNombres() {
         return nombres;

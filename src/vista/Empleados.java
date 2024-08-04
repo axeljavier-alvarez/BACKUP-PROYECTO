@@ -8,15 +8,16 @@ package vista;
  *
  * @author axel5
  */
-public class Cliente extends Persona {
+public class Empleados extends Persona {
 private String nit;
    
     // crear constructor vacio
-    public Cliente(){}
-    public Cliente(String nit, String nombres, String apellidos, String direccion, String telefono, String fecha_nacimiento) {
-        super(nombres, apellidos, direccion, telefono, fecha_nacimiento);
-        this.nit = nit;
+    public Empleados(){}
+
+    public Empleados(String nombres, String apellidos, String direccion, String telefono, String fecha_nacimiento, String sueldo, String bonificacion) {
+        super(nombres, apellidos, direccion, telefono, fecha_nacimiento, sueldo, bonificacion);
     }
+    
 
    
     public String getNit() {
@@ -31,14 +32,16 @@ private String nit;
 @Override
        protected String[] crear(){
            try {
-               String datos [ ] = new String[6];
+               String datos [ ] = new String[8];
                datos[0] = getNit();
                datos[1] = getNombres();
                datos[2] = getApellidos();
                datos[3] = getDireccion();
                datos[4] = getTelefono();
                datos[5] = this.getFecha_nacimiento();
-
+               datos[6] = getSueldo();
+               datos[7] = getBonificacion();
+               
                return datos;
            } catch (Exception ex){
                System.out.println("Tiene un error: " + ex.getMessage());
