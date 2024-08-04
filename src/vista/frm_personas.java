@@ -22,7 +22,7 @@ public class frm_personas extends javax.swing.JFrame {
         cliente = new Empleados();
         tbl_modelo = new DefaultTableModel();
         // crear las columnas, modelo -> tbl clientes
-        String encabezado[] = {"Código", "Nombres", "Apellidos", "Direccion", "Telefono", "Fecha de Nacimiento", "Sueldo", "Bonificacion"};
+        String encabezado[] = {"Código", "Nombres", "Apellidos", "Direccion", "Telefono", "Fecha de Nacimiento", "Sueldo", "Bonificacion", "Total"};
         tbl_modelo.setColumnIdentifiers(encabezado);
         tbl_clientes.setModel(tbl_modelo);
     }
@@ -350,8 +350,10 @@ public class frm_personas extends javax.swing.JFrame {
          cliente.setFecha_nacimiento(txt_fn.getText());
          
          
-         cliente.setSueldo(txt_sueldo.getText());
-         cliente.setBonificacion(txt_bonificacion.getText());
+         // datos int
+         cliente.setSueldo(Integer.parseInt(txt_sueldo.getText()));
+         cliente.setBonificacion(Integer.parseInt(txt_bonificacion.getText())); 
+         cliente.setTotal(Integer.parseInt(txt_sueldo.getText()) + Integer.parseInt(txt_bonificacion.getText()));
          // agregar el modelo de cliente crear para que se cree
          tbl_modelo.addRow(cliente.crear());
          tbl_clientes.setModel(tbl_modelo);
